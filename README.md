@@ -1,4 +1,4 @@
-# Very short description of the package
+# Laravel Domain Expert
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/salehhashemi/laravel-domain-expert.svg?style=flat-square)](https://packagist.org/packages/salehhashemi/laravel-domain-expert)
 [![Total Downloads](https://img.shields.io/packagist/dt/salehhashemi/laravel-domain-expert.svg?style=flat-square)](https://packagist.org/packages/salehhashemi/laravel-domain-expert)
