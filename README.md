@@ -40,13 +40,9 @@ If you discover any security related issues, please email salpars2004@gmail.com 
 
 ## Credits
 
--   [Saleh Hashemi](https://github.com/salehhashemi)
+-   [Saleh Hashemi](https://github.com/salehhashemi1992)
 -   [All Contributors](../../contributors)
 
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
-## Laravel Package Boilerplate
-
-This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
