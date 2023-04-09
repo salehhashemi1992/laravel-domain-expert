@@ -1,0 +1,54 @@
+{
+    "name": "salehhashemi/laravel-domain-expert",
+    "description": "An intuitive Laravel package to streamline Domain Driven Development by simplifying domain creation, management, and organization within your applications.",
+    "keywords": [
+        "salehhashemi",
+        "laravel-domain-expert"
+    ],
+    "homepage": "https://github.com/salehhashemi/laravel-domain-expert",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Saleh Hashemi",
+            "email": "salpars2004@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Salehhashemi\\LaravelDomainExpert\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Salehhashemi\\LaravelDomainExpert\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Salehhashemi\\LaravelDomainExpert\\LaravelDomainExpertServiceProvider"
+            ],
+            "aliases": {
+                "LaravelDomainExpert": "Salehhashemi\\LaravelDomainExpert\\LaravelDomainExpertFacade"
+            }
+        }
+    }
+}
