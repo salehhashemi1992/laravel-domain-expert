@@ -3,6 +3,7 @@
 namespace Salehhashemi\LaravelDomainExpert;
 
 use Illuminate\Support\ServiceProvider;
+use Salehhashemi\LaravelDomainExpert\Console\Custom\CustomMakeControllerCommand;
 use Salehhashemi\LaravelDomainExpert\Console\DomainMakeCommand;
 
 class LaravelDomainExpertServiceProvider extends ServiceProvider
@@ -17,9 +18,9 @@ class LaravelDomainExpertServiceProvider extends ServiceProvider
                 __DIR__.'/../config/domain-expert.php' => config_path('domain-expert.php'),
             ], 'config');
 
-            // Registering package commands.
             $this->commands([
                 DomainMakeCommand::class,
+                CustomMakeControllerCommand::class
             ]);
         }
     }

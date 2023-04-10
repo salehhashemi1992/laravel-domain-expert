@@ -116,29 +116,21 @@ class DomainMakeCommand extends Command
     {
         $domain = Str::studly(class_basename($this->argument('domain')));
 
-/*        $this->call(
-            'domain:make:controller',
-            $this->getControllerOptions($domain)
-        );
+        $controllerNamespace = "App\\Domains\\{$domain}\\Http\\Controllers";
+        $controllerClassName = "{$domain}Controller";
+        $controllerPath = app_path("Domains/{$domain}/Http/Controllers");
+        $controllerName = "{$controllerNamespace}\\{$controllerClassName}";
 
+        $this->call('custom:make:controller', [
+            'name' => $controllerName,
+            '--path' => $controllerPath,
+        ]);
+
+        /*
         $this->call(
             'domain:make:routes',
             $this->getRoutesOptions($domain)
         );*/
-    }
-
-    /**
-     * Get the options for creating a controller.
-     *
-     * @param string $domain
-     * @return array
-     */
-    protected function getControllerOptions(string $domain): array
-    {
-        return [
-            'domain' => $domain,
-            'name' => "{$domain}Controller",
-        ];
     }
 
     /**
