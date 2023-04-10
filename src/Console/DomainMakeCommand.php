@@ -118,12 +118,10 @@ class DomainMakeCommand extends Command
 
         $controllerNamespace = "App\\Domains\\{$domain}\\Http\\Controllers";
         $controllerClassName = "{$domain}Controller";
-        $controllerPath = app_path("Domains/{$domain}/Http/Controllers");
         $controllerName = "{$controllerNamespace}\\{$controllerClassName}";
 
-        $this->call('custom:make:controller', [
+        $this->call('make:controller', [
             'name' => $controllerName,
-            '--path' => $controllerPath,
         ]);
 
         /*
