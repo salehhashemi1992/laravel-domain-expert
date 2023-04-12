@@ -1,0 +1,8 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Domains\{{DummyDomain}}\Http\Controllers\{{DummyController}};
+
+Route::prefix('{{DummyPrefix}}')->group(function () {
+    //
+});

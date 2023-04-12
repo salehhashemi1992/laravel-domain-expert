@@ -5,7 +5,6 @@ namespace Salehhashemi\LaravelDomainExpert\Console;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Console\Input\InputOption;
 
 class DomainMakeCommand extends Command
 {
@@ -103,6 +102,7 @@ class DomainMakeCommand extends Command
         }
 
         $this->createController();
+        $this->createRoutes($domain, $newDomainDirectory);
 
         return true;
     }
@@ -123,12 +123,34 @@ class DomainMakeCommand extends Command
         $this->call('make:controller', [
             'name' => $controllerName,
         ]);
+    }
 
-        /*
-        $this->call(
-            'domain:make:routes',
-            $this->getRoutesOptions($domain)
-        );*/
+    /**
+     * Create a simple route file with a route group and domain prefix.
+     *
+     * @param string $domain
+     * @param string $newDomainDirectory
+     * @return void
+     */
+    private function createRoutes(string $domain, string $newDomainDirectory): void
+    {
+        $routeFilePath = "{$newDomainDirectory}/routes/web.php";
+        $stubPath = __DIR__ . '/../stubs/routes.stub';
+
+        $routeFileContent = file_get_contents($stubPath);
+
+        $replace = [
+            '{{DummyPrefix}}' => strtolower($domain),
+            '{{DummyDomain}}' => $domain,
+        ];
+
+        $routeFileContent = str_replace(
+            array_keys($replace),
+            array_values($replace),
+            $routeFileContent
+        );
+
+        file_put_contents($routeFilePath, $routeFileContent);
     }
 
     /**
