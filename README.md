@@ -53,6 +53,9 @@ Domains
 
 This structure helps you organize your code in a domain-driven manner, making it easier to manage and maintain as your application grows.
 
+## Automatic View Scanning
+
+Laravel Domain Expert can automatically scan and load view files in the appropriate domain without any configuration required.
 
 ### Testing
 

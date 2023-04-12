@@ -9,6 +9,14 @@ use Salehhashemi\LaravelDomainExpert\Console\ExtendedControllerMakeCommand;
 class LaravelDomainExpertServiceProvider extends ServiceProvider
 {
     /**
+     * {@inheritdoc}
+     */
+    public function register(): void
+    {
+        $this->app->register(DomainViewServiceProvider::class);
+    }
+
+    /**
      * Bootstrap the application services.
      */
     public function boot()
