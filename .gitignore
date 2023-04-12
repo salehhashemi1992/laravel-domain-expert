@@ -2,3 +2,6 @@
 /vendor/
 phpunit.xml
 .phpunit.result.cache
+phpstan.neon
+build
+composer.lock
