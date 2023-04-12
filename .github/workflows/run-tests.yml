@@ -2,9 +2,10 @@ name: run-tests
 
 on:
   push:
-    branches: [main]
+    branches:
+      - "**"
   pull_request:
-    branches: [main]
+    types: [ready_for_review, synchronize, opened]
 
 jobs:
   test:
@@ -49,4 +50,4 @@ jobs:
         run: composer show -D
 
       - name: Execute tests
-        run: vendor/bin/pest
+        run: vendor/bin/phpunit
