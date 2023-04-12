@@ -10,7 +10,7 @@ class ExtendedControllerMakeCommand extends ControllerMakeCommand
     /**
      * @inheritdoc
      */
-    public function handle(): bool
+    public function handle(): bool|null
     {
         if ($this->option('domain')) {
             $domain = $this->choice('Which domain would you like to create the controller in?', $this->getDomains());
