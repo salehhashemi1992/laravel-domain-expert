@@ -25,6 +25,34 @@ Replace DomainName with the desired name for your domain.
 
 The command will create a domain directory structure in your Laravel application, including a sample controller and a simple route file with a route group and a domain prefix.
 
+## Domain Structure
+
+When you create a new domain using the `php artisan make:domain DomainName` command, the following directory structure will be generated:
+
+```Bash
+Domains
+└── DomainName
+    ├── Exceptions
+    ├── Http
+    │   ├── Controllers
+    │   │   ├── DomainNameController.php
+    │   ├── Middleware
+    │   └── Requests
+    ├── Jobs
+    ├── Models
+    ├── Repositories
+    ├── resources
+    │   ├── css
+    │   ├── js
+    │   └── views
+    ├── routes
+    │   └── web.php
+    └── Services
+```
+
+This structure helps you organize your code in a domain-driven manner, making it easier to manage and maintain as your application grows.
+
+
 ### Testing
 
 ```bash
