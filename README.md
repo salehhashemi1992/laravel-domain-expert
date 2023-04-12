@@ -37,10 +37,6 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
-### Security
-
-If you discover any security related issues, please email salpars2004@gmail.com instead of using the issue tracker.
-
 ## Credits
 
 -   [Saleh Hashemi](https://github.com/salehhashemi1992)
