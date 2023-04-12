@@ -2,6 +2,8 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/salehhashemi/laravel-domain-expert.svg?style=flat-square)](https://packagist.org/packages/salehhashemi/laravel-domain-expert)
 [![Total Downloads](https://img.shields.io/packagist/dt/salehhashemi/laravel-domain-expert.svg?style=flat-square)](https://packagist.org/packages/salehhashemi/laravel-domain-expert)
+![GitHub Actions](https://github.com/salehhashemi1992/laravel-domain-expert/actions/workflows/run-tests.yml/badge.svg)
+![GitHub Actions](https://github.com/salehhashemi1992/laravel-domain-expert/actions/workflows/phpstan.yml/badge.svg)
 
 Laravel Domain Expert is a package that helps you create and manage domain-driven directory structures in your Laravel application. It automates the process of setting up a new domain with the necessary folders, a controller, and a simple route file with a route group and a domain prefix.
 
