@@ -4,11 +4,11 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/salehhashemi/laravel-domain-expert.svg?style=flat-square)](https://packagist.org/packages/salehhashemi/laravel-domain-expert)
 ![GitHub Actions](https://github.com/salehhashemi/laravel-domain-expert/actions/workflows/main.yml/badge.svg)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+Laravel Domain Expert is a package that helps you create and manage domain-driven directory structures in your Laravel application. It automates the process of setting up a new domain with the necessary folders, a controller, and a simple route file with a route group and a domain prefix.
 
 ## Installation
 
-You can install the package via composer:
+To install Laravel Domain Expert, you can use Composer:
 
 ```bash
 composer require salehhashemi/laravel-domain-expert
@@ -16,9 +16,13 @@ composer require salehhashemi/laravel-domain-expert
 
 ## Usage
 
-```php
-// Usage description here
+To create a new domain directory structure, run the following command:
+```bash
+php artisan make:domain DomainName
 ```
+Replace DomainName with the desired name for your domain.
+
+The command will create a domain directory structure in your Laravel application, including a sample controller and a simple route file with a route group and a domain prefix.
 
 ### Testing
 

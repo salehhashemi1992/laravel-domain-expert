@@ -20,7 +20,7 @@ class LaravelDomainExpertServiceProvider extends ServiceProvider
 
             $this->commands([
                 DomainMakeCommand::class,
-                ExtendedControllerMakeCommand::class
+                ExtendedControllerMakeCommand::class,
             ]);
         }
     }

@@ -16,29 +16,26 @@ class DomainMakeCommand extends Command
     protected $name = 'make:domain';
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected $description = 'Create a new domain directory structure.';
 
     /**
      * The type of files to generate.
-     *
-     * @var string
      */
     protected string $type = 'Route';
 
     /**
      * Execute the console command.
-     *
-     * @return int
      */
     public function handle(): int
     {
         $domain = $this->argument('domain');
         $domainsDirectory = $this->getDomainsDirectory();
 
-        if (!$this->createNewDomainDirectory($domain, $domainsDirectory)) {
+        if (! $this->createNewDomainDirectory($domain, $domainsDirectory)) {
             $this->error("{$domain} domain already exists! Will not overwrite existing domain.");
+
             return 1;
         }
 
@@ -49,14 +46,12 @@ class DomainMakeCommand extends Command
 
     /**
      * Get the application Domains directory path.
-     *
-     * @return string
      */
     private function getDomainsDirectory(): string
     {
         $domainDirectory = app_path('Domains');
 
-        if (!file_exists($domainDirectory)) {
+        if (! file_exists($domainDirectory)) {
             mkdir($domainDirectory);
         }
 
@@ -65,10 +60,6 @@ class DomainMakeCommand extends Command
 
     /**
      * Create a new domain directory with the necessary folders.
-     *
-     * @param string $domain
-     * @param string $domainsDirectory
-     * @return bool
      */
     private function createNewDomainDirectory(string $domain, string $domainsDirectory): bool
     {
@@ -92,7 +83,7 @@ class DomainMakeCommand extends Command
             'resources/css',
             'resources/js',
             'resources/views',
-            'routes'
+            'routes',
         ];
 
         foreach ($folders as $folder) {
@@ -107,8 +98,6 @@ class DomainMakeCommand extends Command
 
     /**
      * Create a controller for the new domain.
-     *
-     * @return void
      */
     protected function createController(): void
     {
@@ -125,15 +114,11 @@ class DomainMakeCommand extends Command
 
     /**
      * Create a simple route file with a route group and domain prefix.
-     *
-     * @param string $domain
-     * @param string $newDomainDirectory
-     * @return void
      */
     private function createRoutes(string $domain, string $newDomainDirectory): void
     {
         $routeFilePath = "{$newDomainDirectory}/routes/web.php";
-        $stubPath = __DIR__ . '/stubs/routes.stub';
+        $stubPath = __DIR__.'/stubs/routes.stub';
 
         $routeFileContent = file_get_contents($stubPath);
 
@@ -153,21 +138,18 @@ class DomainMakeCommand extends Command
 
     /**
      * Get the options for creating routes.
-     *
-     * @param string $domain
-     * @return array
      */
     protected function getRoutesOptions(string $domain): array
     {
         return [
             'domain' => $domain,
             'name' => $domain,
-            '--controller' => "{$domain}Controller"
+            '--controller' => "{$domain}Controller",
         ];
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function getArguments(): array
     {
