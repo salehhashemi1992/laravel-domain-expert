@@ -13,7 +13,14 @@ class ExtendedControllerMakeCommand extends ControllerMakeCommand
     public function handle(): bool|null
     {
         if ($this->option('domain')) {
-            $domain = $this->choice('Which domain would you like to create the controller in?', $this->getDomains());
+            $domains = $this->getDomains();
+
+            if (count($domains) === 0) {
+                $this->error('No domain folders are available in app/Domains.');
+                return false;
+            }
+
+            $domain = $this->choice('Which domain would you like to create the controller in?', $domains);
             $this->input->setArgument('name', "App\\Domains\\{$domain}\\Http\\Controllers\\" . $this->argument('name'));
         }
 
@@ -27,7 +34,8 @@ class ExtendedControllerMakeCommand extends ControllerMakeCommand
     {
         // Retrieve the list of domains from the Domains folder
         $domainsDir = app_path('Domains');
-        return array_diff(scandir($domainsDir), ['.', '..']);
+        $domains = array_diff(scandir($domainsDir), ['.', '..']);
+        return array_values($domains);
     }
 
     /**
