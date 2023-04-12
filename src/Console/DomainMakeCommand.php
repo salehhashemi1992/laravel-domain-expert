@@ -16,9 +16,7 @@ class DomainMakeCommand extends Command
     protected $name = 'make:domain';
 
     /**
-     * The console command description.
-     *
-     * @var string
+     * @inheritdoc
      */
     protected $description = 'Create a new domain directory structure.';
 
@@ -135,7 +133,7 @@ class DomainMakeCommand extends Command
     private function createRoutes(string $domain, string $newDomainDirectory): void
     {
         $routeFilePath = "{$newDomainDirectory}/routes/web.php";
-        $stubPath = __DIR__ . '/../stubs/routes.stub';
+        $stubPath = __DIR__ . '/stubs/routes.stub';
 
         $routeFileContent = file_get_contents($stubPath);
 
@@ -169,9 +167,7 @@ class DomainMakeCommand extends Command
     }
 
     /**
-     * Get the console command arguments.
-     *
-     * @return array
+     * @inheritdoc
      */
     protected function getArguments(): array
     {
