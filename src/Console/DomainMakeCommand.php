@@ -135,7 +135,7 @@ class DomainMakeCommand extends Command
     private function createRoutes(string $domain, string $newDomainDirectory): void
     {
         $routeFilePath = "{$newDomainDirectory}/routes/web.php";
-        $stubPath = __DIR__ . '/../stubs/routes.stub';
+        $stubPath = __DIR__ . '/stubs/routes.stub';
 
         $routeFileContent = file_get_contents($stubPath);
 
