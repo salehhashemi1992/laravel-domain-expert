@@ -3,9 +3,10 @@
 namespace Salehhashemi\LaravelDomainExpert;
 
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
-class DomainViewServiceProvider extends ServiceProvider
+class DomainAutoScanServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -24,10 +25,28 @@ class DomainViewServiceProvider extends ServiceProvider
             $domainName = basename($domainPath);
 
             $viewsPath = $domainPath.'/resources/views';
+            $routesPath = $domainPath.'/routes';
 
             if (File::exists($viewsPath)) {
                 $this->loadViewsFrom($viewsPath, $domainName);
             }
+
+            if (File::exists($routesPath)) {
+                $this->loadRoutes($domainName, $routesPath);
+            }
+        }
+    }
+
+    /**
+     * Load the routes for the domain.
+     */
+    protected function loadRoutes(string $domainName, string $routesPath): void
+    {
+        $routeFiles = File::allFiles($routesPath);
+
+        foreach ($routeFiles as $routeFile) {
+            Route::namespace("App\\Domains\\{$domainName}\\Http\\Controllers")
+                ->group($routeFile->getPathname());
         }
     }
 }

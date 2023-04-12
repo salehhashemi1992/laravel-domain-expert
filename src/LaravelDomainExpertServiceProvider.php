@@ -13,7 +13,7 @@ class LaravelDomainExpertServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->register(DomainViewServiceProvider::class);
+        $this->app->register(DomainAutoScanServiceProvider::class);
     }
 
     /**

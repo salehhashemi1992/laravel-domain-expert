@@ -53,9 +53,16 @@ Domains
 
 This structure helps you organize your code in a domain-driven manner, making it easier to manage and maintain as your application grows.
 
-## Automatic View Scanning
+## Auto-loading Routes and Views
 
-Laravel Domain Expert can automatically scan and load view files in the appropriate domain without any configuration required.
+The package includes built-in support for automatically loading routes and views for each domain. When your package is installed and the service provider is registered, the DomainAutoScanServiceProvider class will scan the Domains directory and automatically discover and load the route and view files for each domain.
+
+### Example: Calling views in controllers
+To reference a view within a domain, use the domain name as the namespace, followed by two colons and the view file path. Here's an example of how to call a view in a controller:
+
+```php
+return view('DomainName::view-name');
+```
 
 ### Testing
 
