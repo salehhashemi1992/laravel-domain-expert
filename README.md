@@ -18,6 +18,8 @@ composer require salehhashemi/laravel-domain-expert
 
 ## Usage
 
+### Creating a new domain
+
 To create a new domain directory structure, run the following command:
 ```bash
 php artisan make:domain DomainName
@@ -26,7 +28,7 @@ Replace DomainName with the desired name for your domain.
 
 The command will create a domain directory structure in your Laravel application, including a sample controller and a simple route file with a route group and a domain prefix.
 
-## Domain Structure
+### Domain Structure
 
 When you create a new domain using the `php artisan make:domain DomainName` command, the following directory structure will be generated:
 
@@ -52,6 +54,18 @@ Domains
 ```
 
 This structure helps you organize your code in a domain-driven manner, making it easier to manage and maintain as your application grows.
+
+### Creating controllers within a domain
+To create a new controller within a specific domain, use the -d or --domain flag:
+
+```bash
+php artisan make:controller ControllerName -d
+```
+or
+```bash
+php artisan make:controller ControllerName --domain
+```
+When using the -d or --domain flag, you will be prompted to select the domain you'd like to create the controller in.
 
 ## Auto-loading Routes and Views
 
