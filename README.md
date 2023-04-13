@@ -73,7 +73,7 @@ You can do the same routine to make:
 - observers
 
 ```bash
-php artisan make:observers ControllerName --domain
+php artisan make:observers ObserverName --domain
 ```
 
 ## Auto-loading Routes and Views
