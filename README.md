@@ -68,6 +68,14 @@ php artisan make:controller ControllerName --domain
 ```
 When using the -d or --domain flag, you will be prompted to select the domain you'd like to create the controller in.
 
+### Other commands
+You can do the same routine to make:
+- observers
+
+```bash
+php artisan make:observers ControllerName --domain
+```
+
 ## Auto-loading Routes and Views
 
 The package includes built-in support for automatically loading routes and views for each domain. When your package is installed and the service provider is registered, the DomainAutoScanServiceProvider class will scan the Domains directory and automatically discover and load the route and view files for each domain.
