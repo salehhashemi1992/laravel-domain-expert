@@ -43,6 +43,7 @@ Domains
     │   └── Requests
     ├── Jobs
     ├── Models
+    ├── Observers
     ├── Repositories
     ├── resources
     │   ├── css

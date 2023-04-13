@@ -78,6 +78,7 @@ class DomainMakeCommand extends Command
             'Http/Requests',
             'Jobs',
             'Models',
+            'Observers',
             'Repositories',
             'Services',
             'resources/css',
