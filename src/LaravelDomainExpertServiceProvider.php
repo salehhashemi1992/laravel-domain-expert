@@ -5,6 +5,7 @@ namespace Salehhashemi\LaravelDomainExpert;
 use Illuminate\Support\ServiceProvider;
 use Salehhashemi\LaravelDomainExpert\Console\DomainMakeCommand;
 use Salehhashemi\LaravelDomainExpert\Console\ExtendedControllerMakeCommand;
+use Salehhashemi\LaravelDomainExpert\Console\ExtendedObserverMakeCommand;
 
 class LaravelDomainExpertServiceProvider extends ServiceProvider
 {
@@ -29,6 +30,7 @@ class LaravelDomainExpertServiceProvider extends ServiceProvider
             $this->commands([
                 DomainMakeCommand::class,
                 ExtendedControllerMakeCommand::class,
+                ExtendedObserverMakeCommand::class,
             ]);
         }
     }
