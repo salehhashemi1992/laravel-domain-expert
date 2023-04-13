@@ -10,7 +10,7 @@ use Salehhashemi\LaravelDomainExpert\LaravelDomainExpertServiceProvider;
 class DomainMakeCommandTest extends TestCase
 {
     /**
-     * @return string[]
+     * {@inheritdoc}
      */
     protected function getPackageProviders($app): array
     {
