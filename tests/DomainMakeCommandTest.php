@@ -18,14 +18,14 @@ class DomainMakeCommandTest extends TestCase
     }
 
     /** @test */
-    public function command_is_registered()
+    public function test_command_is_registered()
     {
         $commands = Artisan::all();
         $this->assertArrayHasKey('make:domain', $commands);
     }
 
     /** @test */
-    public function creates_new_domain_directory_structure()
+    public function test_creates_new_domain_directory_structure()
     {
         $domainName = 'SampleDomain';
 
@@ -59,7 +59,7 @@ class DomainMakeCommandTest extends TestCase
     }
 
     /** @test */
-    public function creates_sample_controller()
+    public function test_creates_sample_controller()
     {
         $domainName = 'SampleDomain';
 
@@ -73,7 +73,7 @@ class DomainMakeCommandTest extends TestCase
     }
 
     /** @test */
-    public function creates_sample_route_file()
+    public function test_creates_sample_route_file()
     {
         $domainName = 'SampleDomain';
 
@@ -87,7 +87,7 @@ class DomainMakeCommandTest extends TestCase
     }
 
     /** @test */
-    public function does_not_overwrite_existing_domain()
+    public function test_does_not_overwrite_existing_domain()
     {
         $domainName = 'ExistingDomain';
 
