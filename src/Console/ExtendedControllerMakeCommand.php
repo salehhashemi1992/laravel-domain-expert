@@ -8,7 +8,7 @@ class ExtendedControllerMakeCommand extends ControllerMakeCommand
 {
     use HandlesDomainOption;
 
-    protected string $folder = 'Controllers';
+    protected string $folder = 'Http\\Controllers';
 
     /**
      * {@inheritdoc}

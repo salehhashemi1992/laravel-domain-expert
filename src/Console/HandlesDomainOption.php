@@ -18,7 +18,7 @@ trait HandlesDomainOption
             }
 
             $domain = $this->choice('Which domain would you like to create the class in?', $domains);
-            $this->input->setArgument('name', "App\\Domains\\{$domain}\\Http\\{$this->folder}\\".$this->argument('name'));
+            $this->input->setArgument('name', "App\\Domains\\{$domain}\\{$this->folder}\\".$this->argument('name'));
         }
 
         return true;
