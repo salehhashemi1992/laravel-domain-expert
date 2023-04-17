@@ -14,13 +14,13 @@ Laravel Domain Expert includes an AI-powered domain recommendation feature that 
 To use this feature, run the following command:
 
 ```bash
-php artisan recommend:domain
+php artisan suggest:domains
 ```
 
 The AI will guess the purpose of your application and provide a well-structured organization without requiring any additional input from the user.
 
-### sample output of AI system
-![](\src\sample.jpg)
+### Sample output of AI system
+![](./src/sample.jpg)
 
 ## Installation
 
