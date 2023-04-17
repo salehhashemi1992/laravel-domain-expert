@@ -32,15 +32,15 @@ class DomainRecommenderCommand extends Command
      */
     public function handle(): int
     {
+        $this->info('Please wait, fetching recommendations...');
+
         $controllers = $this->domainInspector->fetchControllers();
         $models = $this->domainInspector->fetchModels();
 
         $recommendation = $this->serviceCall->recommend($controllers, $models);
 
-        $this->info("AI Recommendation: {$recommendation}");
+        $this->info("$recommendation");
 
         return 0;
     }
-
-    // ...
 }

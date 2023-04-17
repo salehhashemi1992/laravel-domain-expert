@@ -8,6 +8,20 @@
 
 Laravel Domain Expert is a package that helps you create and manage domain-driven directory structures in your Laravel application. It automates the process of setting up a new domain with the necessary folders, a controller, and a simple route file with a route group and a domain prefix.
 
+## AI-Powered Domain Recommendation
+Laravel Domain Expert includes an AI-powered domain recommendation feature that helps you automatically group and organize your existing controllers and models into domain-driven structures.
+
+To use this feature, run the following command:
+
+```bash
+php artisan recommend:domain
+```
+
+The AI will guess the purpose of your application and provide a well-structured organization without requiring any additional input from the user.
+
+### sample output of AI system
+![](\src\sample.jpg)
+
 ## Installation
 
 To install Laravel Domain Expert, you can use Composer:

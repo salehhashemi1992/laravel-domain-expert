@@ -6,61 +6,40 @@ use Illuminate\Support\Facades\File;
 
 class DomainInspector
 {
-    public function fetchControllers(): array
+    public function fetchControllers(): string
     {
-        $controllers = [];
         $appControllersPath = app_path('Http/Controllers');
-        $domainsPath = app_path('Domains');
 
-        $controllers = array_merge($controllers, $this->fetchFiles($appControllersPath, 'Controller'));
-
-        if (File::exists($domainsPath)) {
-            $domains = File::directories($domainsPath);
-            foreach ($domains as $domain) {
-                $domainControllersPath = $domain.'/Http/Controllers';
-                $controllers = array_merge($controllers, $this->fetchFiles($domainControllersPath, 'Controller'));
-            }
-        }
-
-        return $controllers;
+        return $this->fetchFiles($appControllersPath);
     }
 
-    public function fetchModels(): array
+    public function fetchModels(): string
     {
-        $models = [];
         $appModelsPath = app_path('Models');
-        $domainsPath = app_path('Domains');
 
-        $models = array_merge($models, $this->fetchFiles($appModelsPath, 'Model'));
-
-        if (File::exists($domainsPath)) {
-            $domains = File::directories($domainsPath);
-            foreach ($domains as $domain) {
-                $domainModelsPath = $domain.'/Models';
-                $models = array_merge($models, $this->fetchFiles($domainModelsPath, 'Model'));
-            }
-        }
-
-        return $models;
+        return $this->fetchFiles($appModelsPath);
     }
 
-    private function fetchFiles(string $path, string $type): array
+    private function fetchFiles(string $path): string
     {
         if (! File::exists($path)) {
-            return [];
+            return '';
         }
 
-        $files = File::files($path);
-        $items = [];
+        $files = File::allFiles($path);
+        $structure = '';
 
         foreach ($files as $file) {
+            $relativePath = $file->getRelativePath();
             $filename = pathinfo($file)['filename'];
-            if ($type === 'Controller') {
-                $filename = str_replace('Controller', '', $filename);
+            $extension = pathinfo($file)['extension'];
+
+            // Check if the file is a PHP file and not an interface
+            if ($extension === 'php' && ! str_ends_with($filename, 'Interface')) {
+                $structure .= $relativePath ? "{$relativePath}/{$filename}\n" : "{$filename}\n";
             }
-            $items[] = $filename;
         }
 
-        return $items;
+        return $structure;
     }
 }
