@@ -13,7 +13,7 @@ class ExtendedControllerMakeCommand extends ControllerMakeCommand
     /**
      * {@inheritdoc}
      */
-    public function handle(): ?bool
+    public function handle(): bool|null
     {
         $this->handleDomainOption();
 

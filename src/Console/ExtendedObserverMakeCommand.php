@@ -13,7 +13,7 @@ class ExtendedObserverMakeCommand extends ObserverMakeCommand
     /**
      * {@inheritdoc}
      */
-    public function handle(): ?bool
+    public function handle(): bool|null
     {
         $this->handleDomainOption();
 
