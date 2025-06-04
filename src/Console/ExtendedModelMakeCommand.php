@@ -13,7 +13,7 @@ class ExtendedModelMakeCommand extends ModelMakeCommand
     /**
      * {@inheritdoc}
      */
-    public function handle(): bool|null
+    public function handle(): ?bool
     {
         $this->handleDomainOption();
 
